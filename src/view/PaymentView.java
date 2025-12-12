@@ -134,7 +134,7 @@ public class PaymentView extends JFrame {
             Tools.generateMessage("Este cliente no cuenta con arriendos en curso", false);
         }
         else{
-            buttonShow.setVisible(true);
+            buttonShow.setVisible(rootPaneCheckingEnabled);
             buttonShow.setEnabled(true);
         }
     }
@@ -168,11 +168,9 @@ public class PaymentView extends JFrame {
 
         int numFee = (int) tableFees.getValueAt(selectedRow, 0);
 
-        boolean correctOperation = false;
         for (Fee f: selectedRent.getFees()){
             if(f.getNumber() == numFee){
                 if(f.payFee()){
-                    correctOperation = true;
                     Tools.generateMessage("Pago registrado exitosamente", true);
                     fillTable(selectedRent);
                 } else{

@@ -93,10 +93,6 @@ public class RentView extends JFrame {
         tableLabel.setBounds(20, startY + 170, 200, 25);
         add(tableLabel);
 
-        // JLabel headersLabel = new JLabel("N°   Monto   Estado");
-        // headersLabel.setBounds(20, startY + 200, 200, 25);
-        // add(headersLabel);
-
         String[] columnNames = {"N° Cuota", "Monto", "Estado"};
         modelFees = new DefaultTableModel(columnNames, 0){
         @Override

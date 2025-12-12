@@ -3,7 +3,7 @@ package model;
 public class Vehicle {
     
     private String plateNumber;
-    private char vehicleState; // 'D' Disponible, 'A' Arrendado, 'M' Mantenimiento
+    private char vehicleState; // 'D' Disponible, 'A' Arrendado
 
     public Vehicle(String plateNumber, char vehicleState) {
         this.setPlateNumber(plateNumber);
