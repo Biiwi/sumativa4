@@ -1,8 +1,8 @@
 package view;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import model.*;
@@ -96,7 +96,9 @@ public class PaymentView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 showFeesOfRent();
-            }
+                buttonShow.setEnabled(false);
+                buttonShow.setVisible(false);
+            }      
         });
 
         buttonPay.addActionListener(new ActionListener() {
@@ -130,6 +132,10 @@ public class PaymentView extends JFrame {
 
         if (listModelRents.isEmpty()){
             Tools.generateMessage("Este cliente no cuenta con arriendos en curso", false);
+        }
+        else{
+            buttonShow.setVisible(true);
+            buttonShow.setEnabled(true);
         }
     }
 

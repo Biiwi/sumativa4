@@ -75,6 +75,13 @@ public class ClientView extends JFrame {
         String run = textRun.getText();
         String name = textName.getText();
 
+        for (Client c : Data.clients) {
+            if (c.getRun().equalsIgnoreCase(run)) {
+                Tools.generateMessage("Ya existe un cliente con el RUT " + run, false);
+                return;
+            }
+        }
+
         Client newClient = new Client(run, name);
 
         if(newClient.getRun() != null && !newClient.getRun().isEmpty()){
@@ -83,6 +90,7 @@ public class ClientView extends JFrame {
             dispose();
         }
     }
+
 
     private void initUI(){
         JLabel titleLabel = new JLabel("CLIENTES");

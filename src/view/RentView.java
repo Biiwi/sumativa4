@@ -111,6 +111,7 @@ public class RentView extends JFrame {
 
         buttonPay = new JButton("Pagar Primera Cuota");
         buttonPay.setBounds(200, startY + 400, 200, 30);
+        buttonPay.setEnabled(false);
         add(buttonPay);
     }
 
@@ -171,6 +172,10 @@ public class RentView extends JFrame {
             }
 
             String date = textDate.getText();
+            if(!isValidDate(date)){
+                Tools.generateMessage("Fecha ingresada es inválida. Utilice el formato indicado", false);
+                return;
+            }
             int days = Integer.parseInt(textDays.getText());
             int price = Integer.parseInt(textPrice.getText());
             int feeCount = Integer.parseInt(textFeeCount.getText());
@@ -194,6 +199,18 @@ public class RentView extends JFrame {
             Tools.generateMessage("Formato de fecha, precio o cuotas escrito incorrectamente.\n Asegurese que estén escrito en números", false);
         } catch (Exception e) {
             Tools.generateMessage(e.getMessage(), false);  
+        }
+    }
+
+    
+    private boolean isValidDate(String stringDate) {
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
+        sdf.setLenient(false); 
+        try {
+            sdf.parse(stringDate);
+            return true; 
+        } catch (java.text.ParseException e) {
+            return false; 
         }
     }
 
