@@ -124,6 +124,9 @@ public class RentView extends JFrame {
         for (Vehicle v: Data.vehicles){
             comboVehicles.addItem(v);
         }
+
+        comboClients.setSelectedIndex(-1);
+        comboVehicles.setSelectedIndex(-1);
     }
 
     private void initController(){

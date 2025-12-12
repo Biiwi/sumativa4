@@ -70,6 +70,6 @@ public class Client {
     /*PRINTERS*/
     @Override
     public String toString() {
-        return ("Cliente " + name + ", RUN: " + run + ", Estado: " + (isValid ? "Vigente" : "No Vigente"));
+        return (name + ", " + run + ", " + (isValid ? "Vigente" : "No Vigente"));
     }
 }

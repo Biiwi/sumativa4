@@ -69,7 +69,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return ("Vehículo patente " + this.getPlateNumber() + ", Condición: " + (vehicleState == 'D' ? "Disponible" : "Arrendado"));
+        return (this.getPlateNumber() + ", " + (vehicleState == 'D' ? "Disponible" : "Arrendado"));
     }
 
 }

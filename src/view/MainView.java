@@ -65,7 +65,7 @@ public class MainView extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBackground(Color.WHITE);
-        ImageIcon icon = new ImageIcon("img/car_img.png");
+        ImageIcon icon = new ImageIcon("src/view/img/car_img.png");
         JLabel imageLabel = new JLabel(icon);
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(imageLabel);
