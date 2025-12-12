@@ -109,7 +109,7 @@ public class RentView extends JFrame {
         scrollTable.setBounds(20, startY + 230, 560, 150);
         add(scrollTable);
 
-        buttonPay = new JButton("Pagar Cuota Seleccionada");
+        buttonPay = new JButton("Pagar Primera Cuota");
         buttonPay.setBounds(200, startY + 400, 200, 30);
         add(buttonPay);
     }
