@@ -37,6 +37,10 @@ public class ClientView extends JFrame {
                 Tools.generateMessage("Ya existe un cliente con el RUT " + run, false);
                 return;
             }
+            if (c.getName().isEmpty()) {
+                Tools.generateMessage("El campo de nombre está vacio " + run, false);
+                return;
+            }
         }
 
         Client newClient = new Client(run, name);
